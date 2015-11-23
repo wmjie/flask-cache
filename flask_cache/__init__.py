@@ -226,7 +226,7 @@ class Cache(object):
         app.extensions.setdefault('cache', {})
         app.extensions['cache'][self] = cache_obj(
                 app, config, cache_args, cache_options)
-        self.appp = app
+        self.app = app
 
     @property
     def cache(self):

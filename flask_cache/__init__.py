@@ -456,7 +456,6 @@ class Cache(object):
         #: 1, b=2 is equivilant to a=1, b=2, etc.
         new_args = []
         arg_num = 0
-        argspec = get_arg_names(f)
 
         arg_names = get_arg_names(f)
         args_len = len(arg_names)

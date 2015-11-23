@@ -57,6 +57,8 @@ This decorator will use request.path by default for the cache_key.::
 The cached decorator has another optional argument called ``unless``. This
 argument accepts a callable that returns True or False. If ``unless`` returns
 ``True`` then it will bypass the caching mechanism entirely.
+
+
 .. warning::
 
     When using ``cached`` on a view, take care to put it between Flask's

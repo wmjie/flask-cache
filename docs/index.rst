@@ -57,6 +57,19 @@ This decorator will use request.path by default for the cache_key.::
 The cached decorator has another optional argument called ``unless``. This
 argument accepts a callable that returns True or False. If ``unless`` returns
 ``True`` then it will bypass the caching mechanism entirely.
+.. warning::
+
+    When using ``cached`` on a view, take care to put it between Flask's
+    ``@route`` decorator and your function definition. Example::
+
+        @app.route('/')
+        @cache.cached(timeout=50)
+        def index():
+            return 'Cached for 50s'
+
+    If you reverse both decorator, what will be cached is the result of
+    ``@route`` decorator, and not the result of your view function.
+
 
 Caching Other Functions
 -----------------------
